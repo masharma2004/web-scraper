@@ -3,7 +3,6 @@ import Home from "../Components/Home/Home";
 import LoadingScreen from "../Components/Home/LoadingScreen";
 import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Result from "../Components/Result/Result";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -31,7 +30,6 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/result" element={<Result />} />
       </Routes>
     </BrowserRouter>
   );
