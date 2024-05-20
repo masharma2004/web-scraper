@@ -2,6 +2,9 @@ import React ,{useEffect,useState} from "react";
 import Home from "../Components/Home/Home";
 import LoadingScreen from "../Components/Home/LoadingScreen";
 import "./index.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Result from "../Components/Result/Result";
+
 function App() {
   const [loading, setLoading] = useState(true);
 
@@ -25,9 +28,12 @@ function App() {
   }, []);
 
   return (
-    <div>
-      {loading ? <LoadingScreen /> : <Home />}
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/result" element={<Result />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
